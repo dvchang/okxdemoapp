@@ -1,0 +1,6 @@
+framework module OKXUIlib {
+  umbrella header "OKXUIlib-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,29 +6,47 @@
 //
 
 import UIKit
+import OKXUIlib
+import Alamofire
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+            
+        let viewController = OKXUIlib.HomeViewController()
+        
+        let url = "https://private-04a55-videoplayer1.apiary-mock.com/pictures"
+
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+            .validate() // Optional: Validate the status code and content type
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    if let json = value as? [[String : Any]] {
+                        var dataArray : [(String, String)] = []
+                        for dataEntry in json {
+                            if let imageURL = dataEntry["imageUrl"] as? String, let videoURL = dataEntry["videoUrl"] as? String {
+                                dataArray.append((imageURL, videoURL))
+                            }
+                        }
+                        viewController.showData(rawData: dataArray)
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }
+        
+        window?.rootViewController = viewController
+            
+        window?.makeKeyAndVisible()
+        
         return true
-    }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
 
