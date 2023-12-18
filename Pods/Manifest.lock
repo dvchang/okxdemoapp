@@ -1,25 +1,47 @@
 PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
   - Alamofire (5.8.1)
   - AlamofireImage (4.3.0):
     - Alamofire (~> 5.8)
+  - OKXModellib (0.1.0):
+    - AFNetworking
   - OKXUIlib (0.1.0):
     - AlamofireImage (~> 4.3)
 
 DEPENDENCIES:
   - Alamofire
+  - OKXModellib
   - OKXUIlib
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
     - Alamofire
     - AlamofireImage
+    - OKXModellib
     - OKXUIlib
 
 SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
+  OKXModellib: 300705c5a0c1e576de8a087d8943495f1f898505
   OKXUIlib: fa44f7c5c5d0fa4b58994a16400630256dd7ce0c
 
-PODFILE CHECKSUM: d755785ead2d4b3062aedd8bf4ab9f83cf03fe28
+PODFILE CHECKSUM: af67db02d4f567fa1fdb0143bbc84c06a4a22a41
 
 COCOAPODS: 1.14.3

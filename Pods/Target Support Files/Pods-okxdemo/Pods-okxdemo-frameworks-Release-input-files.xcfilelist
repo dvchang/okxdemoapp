@@ -1,4 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-okxdemo/Pods-okxdemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework
+${BUILT_PRODUCTS_DIR}/OKXModellib/OKXModellib.framework
 ${BUILT_PRODUCTS_DIR}/OKXUIlib/OKXUIlib.framework

@@ -1,0 +1,6 @@
+framework module OKXModellib {
+  umbrella header "OKXModellib-umbrella.h"
+
+  export *
+  module * { export * }
+}

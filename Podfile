@@ -8,4 +8,5 @@ target 'okxdemo' do
   # Pods for okxdemo
   pod 'Alamofire'
   pod 'OKXUIlib'
+  pod 'OKXModellib'  
 end
